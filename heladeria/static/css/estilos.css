@@ -1,0 +1,55 @@
+body{
+    background-color: rgb(206, 226, 214);
+}
+header{
+    background-color: rgb(48, 38, 29);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 10px;
+}
+
+img{
+    display: flex;
+    align-items: center;
+    width: 130px;
+}
+
+.titulo{
+    display: flex;
+    align-items: center;
+    margin-left: 25%;
+    color: rgb(255, 249, 235);
+    font-size: 40px;
+    font-weight: bold;
+    height: auto;
+    width: 90%;
+}
+
+.contenedor{
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 1px 1px 8px black; 
+}
+.tipoFrio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.text{
+    font-size: 16px;
+    color: rgb(15, 13, 12);
+    font-weight: bold;
+    padding: 5px;
+}
+
+@media (max-width: 720px)
+{
+    .titulo{
+        margin-left: 10%; 
+    }
+}

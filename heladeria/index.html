@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" initial-scale=1.0>
+    <link rel="icon" type="image/png" href="static/img/LOGO.png" />
+    <link rel="stylesheet" href="static/css/estilos.css">
+    <title>Heladeria Villanova</title>
+</head>
+<header>
+    <img src="static/img/LOGO.png">
+    <div class="titulo">Reinicia tu día</div>
+</header>
+<body>
+    <div class="principal">
+        <div class="contenedor">
+            <div class="tipoFrio">
+                <div class="text">¿Cual va escojer?</div>
+                <div class="contFrio">
+                    <select name="frio" id="selFrio" size="3">
+                        <option>Helado</option>
+                        <option>Paletas</option>
+                        <option>Frappe</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="contenedor" style="display: flex; flex-direction: row;">
+            <div>
+                <div class="text" style="padding: 10px;">¿Que tipo de helado?</div>
+                <div class="tipoHelado">
+                    <input type="radio" name="helado" id="clasicoSencillo"><b><i>Clasico</i></b> sencillo <br>
+                    <input type="radio" name="helado" id="especialSencillo"><b><i>Especial</i></b> sencillo <br>
+                    <input type="radio" name="helado" id="clasicoDoble"><b><i>Clasico</i></b> doble <br>
+                    <input type="radio" name="helado" id="especialDoble"><b><i>Especial</i></b> doble <br>
+                    <input type="radio" name="helado" id="clasicoMedio">1/2 litro <b><i>Clasico</i></b><br>
+                    <input type="radio" name="helado" id="especialMedio">1/2 litro <b><i>Especial</i></b><br>
+                    <input type="radio" name="helado" id="clasicoL">Litro <b><i>Clasico</i></b><br>
+                    <input type="radio" name="helado" id="especialL">Litro <b><i>Especial</i></b><br>
+                </div>
+            </div>
+            <div>
+                <div class="text">Extra</div>
+                <div class="heladoExtra">
+                    <input type="checkbox" name="extra" id="">Cobertura 2 toppings <br>
+                    <input type="checkbox" name="extra" id="">Cobertura 4 toppings <br>
+                    <input type="checkbox" name="extra" id="">Barquillo <br>
+                    <input type="checkbox" name="extra" id="">Canasta de galleta <br>
+                    <input type="checkbox" name="extra" id="">Vaso de crema <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -47,6 +47,49 @@ img{
     padding: 5px;
 }
 
+.apartadoHelado{
+    display: none;
+}
+.apartadoPaletas{
+    display: none;
+}
+.apartadoFrappe{
+    display: none;
+}
+
+.heladoClasico{
+    display: none;
+}
+.heladoEspecial{
+    display: none;
+}
+
+.paletaEspecial{
+    display: none;
+}
+.paletaLeche{
+    display: none;
+}
+.paletaAgua{
+    display:none;
+}
+
+.frappeLeche{
+    display: none;
+}
+.frappeAgua{
+    display: none;
+}
+.frappeHelado{
+    display: none;
+}
+.heladoClasico2{
+    display: none;
+}
+.heladoEspecial2{
+    display: none;
+}
+
 @media (max-width: 720px)
 {
     .titulo{

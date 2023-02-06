@@ -6,6 +6,7 @@
     <meta name="viewport" initial-scale=1.0>
     <link rel="icon" type="image/png" href="static/img/LOGO.png" />
     <link rel="stylesheet" href="static/css/estilos.css">
+    <script src="static/js/acciones.js"></script>
     <title>Heladeria Villanova</title>
 </head>
 <header>
@@ -16,40 +17,198 @@
     <div class="principal">
         <div class="contenedor">
             <div class="tipoFrio">
-                <div class="text">¿Cual va escojer?</div>
-                <div class="contFrio">
-                    <select name="frio" id="selFrio" size="3">
-                        <option>Helado</option>
-                        <option>Paletas</option>
-                        <option>Frappe</option>
-                    </select>
+                <div class="text">¿Que va elegir?</div>
+                <div class="contFrio" id="contFrio">
+                    <input type="radio" name="tipo" id="helado" onclick="mostrarHelado();"> <label for="helado">Helados</label><br> 
+                    <input type="radio" name="tipo" id="paletas" onclick="mostrarPaletas();"> <label for="paletas">Paletas</label><br> 
+                    <input type="radio" name="tipo" id="frappe" onclick="mostrarFrappe();"> <label for="frappe">Frappe</label><br> 
                 </div>
             </div>
         </div>
-        <div class="contenedor" style="display: flex; flex-direction: row;">
-            <div>
-                <div class="text" style="padding: 10px;">¿Que tipo de helado?</div>
-                <div class="tipoHelado">
-                    <input type="radio" name="helado" id="clasicoSencillo"><b><i>Clasico</i></b> sencillo <br>
-                    <input type="radio" name="helado" id="especialSencillo"><b><i>Especial</i></b> sencillo <br>
-                    <input type="radio" name="helado" id="clasicoDoble"><b><i>Clasico</i></b> doble <br>
-                    <input type="radio" name="helado" id="especialDoble"><b><i>Especial</i></b> doble <br>
-                    <input type="radio" name="helado" id="clasicoMedio">1/2 litro <b><i>Clasico</i></b><br>
-                    <input type="radio" name="helado" id="especialMedio">1/2 litro <b><i>Especial</i></b><br>
-                    <input type="radio" name="helado" id="clasicoL">Litro <b><i>Clasico</i></b><br>
-                    <input type="radio" name="helado" id="especialL">Litro <b><i>Especial</i></b><br>
+        <div id="apartadoHelado" class="apartadoHelado">
+            <h1>apartado de helado</h1>
+            <div class="contenedor" style="display: flex; flex-direction: row;">
+                <div>
+                    <div class="text" style="padding: 10px;">¿Que tipo de helado?</div>
+                    <div class="tipoHelado">
+                        <input type="radio" name="helado" id="clasicoSencillo" onclick="mostrarClasico(); "><b><i>Clasico</i></b> sencillo <br>
+                        <input type="radio" name="helado" id="especialSencillo" onclick="mostrarEspecial(); "><b><i>Especial</i></b> sencillo <br>
+                        <input type="radio" name="helado" id="clasicoDoble" onclick="mostrarClasico(); "><b><i>Clasico</i></b> doble <br>
+                        <input type="radio" name="helado" id="especialDoble" onclick="mostrarEspecial(); "><b><i>Especial</i></b> doble <br>
+                        <input type="radio" name="helado" id="clasicoMedio" onclick="mostrarClasico(); ">1/2 litro <b><i>Clasico</i></b><br>
+                        <input type="radio" name="helado" id="especialMedio" onclick="mostrarEspecial(); ">1/2 litro <b><i>Especial</i></b><br>
+                        <input type="radio" name="helado" id="clasicoL" onclick="mostrarClasico(); ">Litro <b><i>Clasico</i></b><br>
+                        <input type="radio" name="helado" id="especialL" onclick="mostrarEspecial(); ">Litro <b><i>Especial</i></b><br>
+                    </div>
+                </div>
+                <div class="heladoClasico" id="heladoClasico">
+                    <div class="text" style="padding: 10px;">Helados Clasicos</div>
+                    <div>
+                        <input type="radio" name="clasico" id="arrozLeche"> Arozz con Leche <br>
+                        <input type="radio" name="clasico" id="chocolate"> Chocolate <br>
+                        <input type="radio" name="clasico" id="fresaCrema"> Fresa con Crema <br>
+                        <input type="radio" name="clasico" id="galleta"> Galleta <br>
+                        <input type="radio" name="clasico" id="gloria"> Gloria <br>
+                        <input type="radio" name="clasico" id="unicornio"> Unicornio <br>
+                        <input type="radio" name="clasico" id="nuez"> Nuez <br>
+                        <input type="radio" name="clasico" id="mentaChocolate"> Menta con Chocolate <br>
+                        <input type="radio" name="clasico" id="ronPasas"> Ron con Pasas <br>
+                        <input type="radio" name="clasico" id="palanqueta"> Palanqueta <br>
+                        <input type="radio" name="clasico" id="vainilla"> Vainilla <br>
+                        <input type="radio" name="clasico" id="yogurtNatural"> Yogurt Natural <br>
+                        <input type="radio" name="clasico" id="sherbetCoco"> Sherbet de Coco <br>
+                        <input type="radio" name="clasico" id="nieveLimon"> Nieve de Limon <br>
+                        <input type="radio" name="clasico" id="nieveMango"> Nieve de Mango <br>
+                    </div>
+                </div>
+                <div class="heladoEspecial" id="heladoEspecial">
+                    <div class="text" style="padding: 10px;">Helados Especiales</div>
+                    <div>
+                        <input type="radio" name="especial" id="almendra"> Almendra <br>
+                        <input type="radio" name="especial" id="ateQueso"> Ate con Queso <br>
+                        <input type="radio" name="especial" id="cafeIrlandes"> Cafe Irlandes <br>
+                        <input type="radio" name="especial" id="carajillo"> Carajillo <br>
+                        <input type="radio" name="especial" id="banoffe"> Banoffe <br>
+                        <input type="radio" name="especial" id="festin"> Festin <br>
+                        <input type="radio" name="especial" id="cafeLatte"> Cafe Latte <br>
+                        <input type="radio" name="especial" id="mediterraneo"> Mediterraneo <br>
+                        <input type="radio" name="especial" id="monteBlanco"> Monte Blanco <br>
+                        <input type="radio" name="especial" id="rockyRoad"> Rocky Road <br>
+                        <input type="radio" name="especial" id="nieveMezcal"> Nieve Mezcal <br>
+                        <input type="radio" name="especial" id="limonSinAzucar"> Limon sin Azucar <br>
+                    </div>
+                </div>
+                <div>
+                    <div class="text">Extra</div>
+                    <div class="heladoExtra">
+                        <input type="checkbox" name="extra" id="">Cobertura 2 toppings <br>
+                        <input type="checkbox" name="extra" id="">Cobertura 4 toppings <br>
+                        <input type="checkbox" name="extra" id="">Barquillo <br>
+                        <input type="checkbox" name="extra" id="">Canasta de galleta <br>
+                        <input type="checkbox" name="extra" id="">Vaso de crema <br>
+                    </div>
                 </div>
             </div>
-            <div>
-                <div class="text">Extra</div>
-                <div class="heladoExtra">
-                    <input type="checkbox" name="extra" id="">Cobertura 2 toppings <br>
-                    <input type="checkbox" name="extra" id="">Cobertura 4 toppings <br>
-                    <input type="checkbox" name="extra" id="">Barquillo <br>
-                    <input type="checkbox" name="extra" id="">Canasta de galleta <br>
-                    <input type="checkbox" name="extra" id="">Vaso de crema <br>
+        </div>
+        <div id="apartadoPaletas" class="apartadoPaletas">
+            <h1>apartado de paletas</h1>
+            <div class="contenedor" style="display: flex; flex-direction: row;">
+                <div>
+                    <div class="text" style="padding: 10px;">¿Que tipo de paleta?</div>
+                    <div class="tipoPaleta">
+                        <input type="radio" name="peleta" id="especialP" onclick="mostrarPaletaEspecial();"> Especial <br>
+                        <input type="radio" name="paleta" id="cremaLecheP" onclick="mostrarPaletaLeche();"> Crema de Lecha <br>
+                        <input type="radio" name="paleta" id="aguaP" onclick="mostrarPaletaAgua();"> Agua <br>
+                    </div>
+                </div>
+                <div class="paletaEspecial" id="paletaEspecial">
+                    <div class="text" style="padding: 10px;">Paletas Especiales</div>
+                    <div>
+                        <input type="radio" name="especialP" id="ateQueso"> Ate con Queso <br>
+                        <input type="radio" name="especialP" id="chocolate"> Chocolate <br>
+                        <input type="radio" name="especialP" id="chocolateSinAzucar"> Chocolate sin Azucar <br>
+                        <input type="radio" name="especialP" id="mazapan"> Mazapan <br>
+                    </div>
+                </div>
+                <div class="paletaLeche" id="paletaLeche">
+                    <div class="text" style="padding: 10px;">Paletas de Crema de Lecha</div>
+                    <div>
+                        <input type="radio" name="cremaLecheP" id="yogutFrutos"> Yogurt con Frutos Rojo <br>
+                        <input type="radio" name="cremaLecheP" id="fresa"> Fresa <br>
+                        <input type="radio" name="cremaLecheP" id="nuez"> Nuez <br>
+                        <input type="radio" name="cremaLecheP" id="mentaChocolate"> Menta con Chocolate <br>
+                    </div>
+                </div>
+                <div class="paletaAgua" id="paletaAgua">
+                    <div class="text" style="padding: 10px;">Paletas de Agua</div>
+                    <div>
+                        <input type="radio" name="aguaP" id="limon"> Limon <br>
+                        <input type="radio" name="aguaP" id="chilimango"> Chilimango <br>
+                        <input type="radio" name="aguaP" id="menta"> Menta <br>
+                        <input type="radio" name="aguaP" id="tamachile"> Tamachile <br>
+                    </div>
                 </div>
             </div>
+        </div>
+        <div id="apartadoFrappe" class="apartadoFrappe">
+            <h1>apartado de frappe</h1>
+            <div class="contenedor" style="display: flex; flex-direction: row;">
+                <div>
+                    <div class="text" style="padding: 10px;">¿Que tipo de Frappe?</div>
+                    <div class="tipoFrappe">
+                        <input type="radio" name="frappe" id="frappeLecheB" onclick="mostrarFrappeLeche();"> Leche <br>
+                        <input type="radio" name="frappe" id="frappeAguaB" onclick="mostrarFrappeAgua();"> Agua <br>
+                        <input type="radio" name="frappe" id="frappeHeladoB" onclick="mostrarFrappeHelado();"> Helado <br>
+                    </div>
+                </div>
+
+                <div class="frappeLeche" id="frappeLeche">
+                    <div class="text" style="padding: 10px;">Frappe de Leche</div>
+                    <div>
+                        <input type="radio" name="frappeL" id="cafe"> Cafe <br>
+                        <input type="radio" name="frappeL" id="horchata"> Horchata <br>
+                        <input type="radio" name="frappeL" id="horchataCafe"> Horchata-Cafe <br>
+                        <input type="radio" name="frappeL" id="moka"> Moka <br>
+                    </div>
+                </div>
+
+                <div class="frappeAgua" id="frappeAgua">
+                    <div class="text" style="padding: 10px;">Frappe de Agua</div>
+                    <div>
+                        <input type="radio" name="frappeA" id="mango"> Mango <br>
+                        <input type="radio" name="frappeA" id="jamaica"> Jamaica <br>
+                        <input type="radio" name="frappeA" id="tamarindo"> Tamarindo <br>                    
+                    </div>
+                </div>
+
+                <div class="frappeHelado" id="frappeHelado">
+                    <div class="text" style="padding: 10px;">Frappe de Helado</div>
+                    <div>
+                        <input type="radio" name="frappeH" id="clasicoSencillo2" onclick="mostrarClasico2(); ">Frappe helado <b><i>Clasico</i></b><br>
+                        <input type="radio" name="frappeH" id="especialSencillo2" onclick="mostrarEspecial2(); ">Frappe helado <b><i>Especial</i></b><br>
+                    </div>
+                </div>
+                <div class="heladoClasico2" id="heladoClasico2">
+                    <div class="text" style="padding: 10px;">Helados Clasicos</div>
+                    <div>
+                        <input type="radio" name="clasico" id="arrozLeche"> Arozz con Leche <br>
+                        <input type="radio" name="clasico" id="chocolate"> Chocolate <br>
+                        <input type="radio" name="clasico" id="fresaCrema"> Fresa con Crema <br>
+                        <input type="radio" name="clasico" id="galleta"> Galleta <br>
+                        <input type="radio" name="clasico" id="gloria"> Gloria <br>
+                        <input type="radio" name="clasico" id="unicornio"> Unicornio <br>
+                        <input type="radio" name="clasico" id="nuez"> Nuez <br>
+                        <input type="radio" name="clasico" id="mentaChocolate"> Menta con Chocolate <br>
+                        <input type="radio" name="clasico" id="ronPasas"> Ron con Pasas <br>
+                        <input type="radio" name="clasico" id="palanqueta"> Palanqueta <br>
+                        <input type="radio" name="clasico" id="vainilla"> Vainilla <br>
+                        <input type="radio" name="clasico" id="yogurtNatural"> Yogurt Natural <br>
+                        <input type="radio" name="clasico" id="sherbetCoco"> Sherbet de Coco <br>
+                        <input type="radio" name="clasico" id="nieveLimon"> Nieve de Limon <br>
+                        <input type="radio" name="clasico" id="nieveMango"> Nieve de Mango <br>
+                    </div>
+                </div>
+                <div class="heladoEspecial2" id="heladoEspecial2">
+                    <div class="text" style="padding: 10px;">Helados Especiales</div>
+                    <div>
+                        <input type="radio" name="especial" id="almendra"> Almendra <br>
+                        <input type="radio" name="especial" id="ateQueso"> Ate con Queso <br>
+                        <input type="radio" name="especial" id="cafeIrlandes"> Cafe Irlandes <br>
+                        <input type="radio" name="especial" id="carajillo"> Carajillo <br>
+                        <input type="radio" name="especial" id="banoffe"> Banoffe <br>
+                        <input type="radio" name="especial" id="festin"> Festin <br>
+                        <input type="radio" name="especial" id="cafeLatte"> Cafe Latte <br>
+                        <input type="radio" name="especial" id="mediterraneo"> Mediterraneo <br>
+                        <input type="radio" name="especial" id="monteBlanco"> Monte Blanco <br>
+                        <input type="radio" name="especial" id="rockyRoad"> Rocky Road <br>
+                        <input type="radio" name="especial" id="nieveMezcal"> Nieve Mezcal <br>
+                        <input type="radio" name="especial" id="limonSinAzucar"> Limon sin Azucar <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <button type="reset" onclick="eliminarOpcion();">Eliminar la opcion</button>
         </div>
     </div>
 </body>

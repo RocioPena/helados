@@ -7,49 +7,62 @@
     <title>prueba</title>
 </head>
 <script>
-    var clic = 1;
-function divLogin(){ 
-   if(clic==1){
-   document.getElementById("caja").style.height = "100px";
-   clic = clic + 1;
-   } else{
-       document.getElementById("caja").style.height = "0px";      
-    clic = 1;
-   }   
-}
+
+    function mostrarHelado(){
+        document.getElementById('apartadoHelado').style.display = 'block'
+        document.getElementById('apartadoPaletas').style.display = 'none'
+        document.getElementById('apartadoFrappe').style.display = 'none'
+    }
+    function mostrarPaletas(){
+        document.getElementById('apartadoPaletas').style.display = 'block'
+        document.getElementById('apartadoHelado').style.display = 'none'
+        document.getElementById('apartadoFrappe').style.display = 'none'
+    }
+    function mostrarFrappe(){
+        document.getElementById('apartadoFrappe').style.display = 'block'
+        document.getElementById('apartadoHelado').style.display = 'none'
+        document.getElementById('apartadoPaletas').style.display = 'none'
+    }
+    function eliminarOpcion(){
+        document.getElementById('apartadoHelado').style.display = 'none'
+        document.getElementById('apartadoPaletas').style.display = 'none'
+        document.getElementById('apartadoFrappe').style.display = 'none'
+    }
+
 </script>
 <style>
-    #boton{
-    padding: 10px;
-    background: orange;
-    width: 95px;
-    cursor: pointer;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    box-shadow: 0px 0px 1px #000;
-    display: inline-block;
-}
- 
-#boton:hover{
-    opacity: .8;
-}
- 
-#caja{
-    width: 100%;
-    margin: auto;
-    height: 0px;
-    background: #000;
-    box-shadow: 10px 10px 3px #D8D8D8;
-    transition: height .4s;
-}
+    #apartadoHelado{
+        display: none;
+    }
+    #apartadoPaletas{
+        display: none;
+    }
+    #apartadoFrappe{
+        display: none;
+    }
+
 </style>
 <body>
-    <div id="boton" onclick="divLogin()">
-        Mostrar/Ocultar
-        </div>
-        <div id="caja">
-        </div> 
+    <h1>¿Que eva elejir?</h1>
+    <div class="contFrio" id="contFrio">
+        <input type="radio" name="tipo" id="helado" onclick="mostrarHelado();"> <label for="helado">Helados</label><br> 
+        <input type="radio" name="tipo" id="paletas" onclick="mostrarPaletas();"> <label for="paletas">Paletas</label><br> 
+        <input type="radio" name="tipo" id="frappe" onclick="mostrarFrappe();"> <label for="frappe">Frappe</label><br> 
+    </div>
+    <div id="apartadoHelado">
+        <h1>apartado de helado</h1>
+    </div>
+    <div id="apartadoPaletas">
+        <h1>apartado de paletas</h1>
+    </div>
+    <div id="apartadoFrappe">
+        <h1>apartado de frappe</h1>
+    </div>
+    <div>
+        <button type="reset" onclick="eliminarOpcion();">Eliminar la opcion</button>
 
-        <a href="https://www.azulweb.net/mostrar-y-ocultar-div-con-javascript-y-css3/#:~:text=Mostrar%20y%20Ocultar%20Div%20con%20JavaScript%20y%20CSS3,2%20Primer%20clic%20...%203%20Segundo%20clic%20">l</a>
+    </div>
+        
+
 </body>
 </html>
